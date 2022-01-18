@@ -1,0 +1,92 @@
+/* -- CALCULATOR - GENERIC COLORS -- */
+:root {
+  /* -- BACKGROUND -- */
+  --mainBackground: hsl(222, 26%, 31%);
+  --keypadBackground: hsl(223, 31%, 20%);
+  --screenBackground: hsl(224, 36%, 15%);
+
+  /* -- KEYS -- */
+
+  /* del + reset */
+  --deleteAndResetBackground: hsl(225, 21%, 49%);
+  --deleteAndResetShadow: hsl(224, 28%, 35%);
+
+  /* equal */
+  --equalKeyBackground: hsl(6, 63%, 50%);
+  --equalKeyShadow: hsl(6, 70%, 34%);
+
+  /* numbered keys */
+  --simpleKeyBackground: hsl(30, 25%, 89%);
+  --simpleKeyShadow: hsl(28, 16%, 65%);
+
+  /* Text */
+  --textDarkBlue: hsl(221, 14%, 31%);
+  --textWhite: hsl(0, 0%, 100%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainBackground);
+}
+
+/* SCREEN CALCULATOR */
+.calculator__screen {
+  background-color: var(--screenBackground);
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* -- CALCULATOR DISPLAY KEYS -- */
+.calculator__keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 60px);
+  grid-gap: 20px;
+  padding: 10px;
+  background-color: var(--keypadBackground);
+  border-radius: 8px;
+}
+
+/* GENERIC STYLE ON CALCULATOR KEYS */
+.calculator__key,
+.calculator__key-del,
+.calculator__key-reset,
+.calculator__key-equal {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+}
+
+/* EQUAL AND RESET KEY CALCULATOR IN DISPLAY GRID - SPACING */
+.calculator__key-equal,
+.calculator__key-reset {
+  grid-column: span 2;
+}
+
+/* SIMPLE KEYS CALCULATOR - COLOR */
+.calculator__key {
+  background-color: var(--simpleKeyBackground);
+  box-shadow: 0px 3px 0px var(--simpleKeyShadow);
+}
+
+/* EQUAL KEY CALCULATOR */
+.calculator__key-equal {
+  background-color: var(--equalKeyBackground);
+  box-shadow: 0px 3px 0px var(--equalKeyShadow);
+  color: var(--textWhite);
+  text-transform: uppercase;
+}
+
+/* EQUAL + DELETE KEYS CALCULATOR */
+.calculator__key-reset,
+.calculator__key-del {
+  background-color: var(--deleteAndResetBackground);
+  box-shadow: 0px 3px 0px var(--deleteAndResetShadow);
+  color: var(--textWhite);
+  text-transform: uppercase;
+}
